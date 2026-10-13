@@ -2,7 +2,7 @@ from flask import Flask, render_template,redirect,url_for,request,jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint
 from dotenv import load_dotenv
-import os,secrets
+import os,secrets,traceback
 from flask_migrate import Migrate
 from datetime import datetime,timedelta
 from werkzeug.security import check_password_hash,generate_password_hash
@@ -392,9 +392,10 @@ def cancel_booking(bookingid):
              return error_all("Booking cannot be found",404)
         waitlist_count=waitlist.query.filter_by(session_id=booking_to_delete.session_id).all()
         session=sessions.query.filter_by(session_id=booking_to_delete.session_id).first()
-        if datetime.now() >= session.session_time:
+        session_start = datetime.combine(session.session_date, session.session_time)
+        if datetime.now() >= session_start:
             return error_all("Cannot cancel a session that has already started.", 400)
-        if datetime.now()< session.session_time and len(waitlist_count) != 0:
+        if datetime.now()< session_start and len(waitlist_count) != 0:
             waitlist_first = waitlist.query.filter_by(session_id=booking_to_delete.session_id).order_by(waitlist.waitlist_number.asc()).first()
             code = secrets.token_hex(4).upper()
             booking_to_be_made = bookings(waitlist_first.user_id,waitlist_first.session_id,code)

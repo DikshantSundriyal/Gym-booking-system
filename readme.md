@@ -33,6 +33,6 @@ Name: Aditya
 Email: aditya@gym.com
 Password: Aditya123!
 
-Session 1: 2026-10-15 at 10:00 (19 seats left)
-Session 2: 2026-10-17 at 11:00 (20 seats left)
-Session 3: 2026-10-18 at 18:00 (FULL - 0 seats left)
+Session 1: Today at 10:00 (19 seats left)
+Session 2: Tommorow at 11:00 (20 seats left)
+Session 3: Day after tommorow at 18:00 (FULL - 0 seats left)

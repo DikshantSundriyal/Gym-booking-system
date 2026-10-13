@@ -35,7 +35,7 @@ with app.app_context():
     today = date.today()
 
     #Session 1 Open with seats available
-    s1 = sessions(cap=20,matsleft=19,sdate=today+timedelta(days=2),stime=time(10, 0))
+    s1 = sessions(cap=20,matsleft=19,sdate=today,stime=time(10, 0))
     database.session.add(s1)
     database.session.commit()
 
@@ -45,16 +45,11 @@ with app.app_context():
     database.session.add(b1)
 
     #Session2 Completely Empty (20 seats left)
-    s2 = sessions(cap=20,matsleft=20,sdate=today + timedelta(days=4),stime=time(11, 0))
+    s2 = sessions(cap=20,matsleft=20,sdate=today + timedelta(days=1),stime=time(11, 0))
     database.session.add(s2)
 
     #Session3-Completely FULL(0 seats left)
-    s3_full = sessions(
-        cap=20,
-        matsleft=0,
-        sdate=today + timedelta(days=4),
-        stime=time(18, 0)
-    )
+    s3_full = sessions(cap=20,matsleft=0,sdate=today + timedelta(days=2),stime=time(18, 0))
     database.session.add(s3_full)
     database.session.commit()
 
@@ -71,6 +66,6 @@ with app.app_context():
     print("Admin:    admin@gym.com  / Admin123!")
     print("Member 1: rohan@gym.com  / Rohan123!")
     print("Member 2: aditya@gym.com    / Aditya123!")
-    print(f"Session 1: {today+ timedelta(days=2)} at 10:00 (19 seats left)")
-    print(f"Session 2: {today + timedelta(days=4)} at 11:00 (20 seats left)")
-    print(f"Session 3: {today + timedelta(days=5)} at 18:00 (FULL - 0 seats left)")
+    print(f"Session 1: {today} at 10:00 (19 seats left)")
+    print(f"Session 2: {today + timedelta(days=1)} at 11:00 (20 seats left)")
+    print(f"Session 3: {today + timedelta(days=2)} at 18:00 (FULL - 0 seats left)")
