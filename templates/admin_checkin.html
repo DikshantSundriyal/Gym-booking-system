@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    </head>
+    <body>
+        <div class="admin-checkin" style="height:auto; width: max-content; ">
+            <form id="admin_checkin">
+                <div>
+                    <p class="form-text">Checked In</p>
+                </div>
+                <div>
+                    <label class="checkin-text">Booking code:</label>
+                    <input type="text" id="booking_code" placeholder="Enter booking code">
+                </div>
+
+                <br><br>
+
+                <div>
+                    <button type="submit" id="checkin_button" class="button">Checked In</button>
+                </div>
+
+                <div>
+                    <p id="checkin_message" class="check-in-message"></p>
+                </div>
+            </form>
+        </div>
+        <script src="{{url_for('static',filename='admin_checkin.js')}}"></script>
+    </body>
+</html>

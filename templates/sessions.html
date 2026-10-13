@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    </head>
+    <body>
+        <h1>SESSIONS</h1>
+        <div style="margin-left: 10px; margin-bottom: 20px;">
+            <label class="time-text">Filter by date: </label>
+            <input type="date" id="filter_date">
+            <button id="clear_filter_btn" class="button" style="width: 100px; height: 35px; margin-left: 5px;">Clear</button>
+        </div>
+        <div id="sessions-message"></div>
+        <div id="sessions" class="sessions"></div>
+        <script src="{{url_for('static',filename='sessions.js')}}"></script>
+    </body>
+</html>

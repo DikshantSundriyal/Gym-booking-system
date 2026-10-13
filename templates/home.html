@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    </head>
+    <body>
+        <div class="home-box">
+            <div>
+                <p class="home-box-text" style="padding-left: 50px;">What do you want to do?</p>
+            </div>
+            <div>
+               <button id="Login-button" class="Login_button">Login</button>
+            </div>
+            <div>
+                <button id="Session-booking-button" class="Session_booking_button">Book a Session</button>  
+            </div>
+            <div>
+                <button id="Session-history-button" class="Session_history_button">Booking history</button>   
+            </div>
+            <p id="Home-message" class="home_msg"></p>
+        </div>
+        <script src="{{url_for('static',filename='home.js')}}"></script>
+    </body>
+</html>

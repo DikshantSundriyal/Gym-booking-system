@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    </head>
+    <body>
+        <div class="session-form">
+            <form  id="create_session">
+                <p class="form-text">Create a Session</p>
+
+                <label class="name-text">Date:</label>
+                <input type="date" id="session_date" name="name" placeholder="Enter your name here">
+
+                <br><br>
+
+                <label class="time-text">Start time:</label>
+                <select id="session_time" >
+                    <option value="" >Select time</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                    <option value="21:00">21:00</option>
+                </select>
+                
+                <br><br>
+
+                <button type="submit" id="session_button" class="button">Create session</button>
+                <p id="session_message" class="register-message"></p>
+            </form>
+        </div>
+        <script src="{{url_for('static',filename='session_create.js')}}"></script>
+    </body>
+</html>

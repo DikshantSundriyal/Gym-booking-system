@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    </head>
+    <body>
+        <div class="home-box" style="height: auto; width: 400px; margin: 2rem auto;">
+            <div>
+                <p class="form-text">Session Bookings</p>
+            </div>
+            <div>
+                <label class="time-text">Select session:</label>
+                <select id="roster_session_select">
+                    <option value="">Select session</option>
+                </select>
+            </div>
+            <div id="roster_message" class="check-in-message" style="padding-left: 0;"></div>
+            <div id="roster_container" style="margin-top: 15px;"></div>
+            <div style="margin-top: 20px;">
+                <button id="back_admin_btn" class="button" style="background-color: black; color: white;">Back to Admin</button>
+            </div>
+        </div>
+        <script src="{{url_for('static',filename='adminroster.js')}}"></script>
+    </body>
+</html>
